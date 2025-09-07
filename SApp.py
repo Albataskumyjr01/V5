@@ -51,22 +51,22 @@ NIGERIAN_CHARGE_CONTROLLERS = {
 
 # Common Nigerian appliances with typical wattages and usage patterns
 NIGERIAN_APPLIANCES = {
-    "Ceiling Fan": {"watt": 75, "hours": 8},
-    "Standing Fan": {"watt": 55, "hours": 6},
-    "TV (32-inch LED)": {"watt": 50, "hours": 5},
-    "TV (42-inch LED)": {"watt": 80, "hours": 5},
-    "Refrigerator (Medium)": {"watt": 150, "hours": 8},
-    "Deep Freezer": {"watt": 200, "hours": 10},
-    "Air Conditioner (1HP)": {"watt": 750, "hours": 6},
-    "Air Conditioner (1.5HP)": {"watt": 1100, "hours": 6},
-    "Water Pump (1HP)": {"watt": 750, "hours": 2},
-    "Lighting (LED Bulb)": {"watt": 10, "hours": 8},
-    "Computer Desktop": {"watt": 200, "hours": 4},
-    "Laptop": {"watt": 65, "hours": 5},
-    "Decoder": {"watt": 25, "hours": 6},
-    "Home Theatre": {"watt": 100, "hours": 3},
-    "Washing Machine": {"watt": 500, "hours": 2},
-    "Electric Iron": {"watt": 1000, "hours": 1},
+    "Ceiling Fan": {"watt": 75, "hours": 8.0},
+    "Standing Fan": {"watt": 55, "hours": 6.0},
+    "TV (32-inch LED)": {"watt": 50, "hours": 5.0},
+    "TV (42-inch LED)": {"watt": 80, "hours": 5.0},
+    "Refrigerator (Medium)": {"watt": 150, "hours": 8.0},
+    "Deep Freezer": {"watt": 200, "hours": 10.0},
+    "Air Conditioner (1HP)": {"watt": 750, "hours": 6.0},
+    "Air Conditioner (1.5HP)": {"watt": 1100, "hours": 6.0},
+    "Water Pump (1HP)": {"watt": 750, "hours": 2.0},
+    "Lighting (LED Bulb)": {"watt": 10, "hours": 8.0},
+    "Computer Desktop": {"watt": 200, "hours": 4.0},
+    "Laptop": {"watt": 65, "hours": 5.0},
+    "Decoder": {"watt": 25, "hours": 6.0},
+    "Home Theatre": {"watt": 100, "hours": 3.0},
+    "Washing Machine": {"watt": 500, "hours": 2.0},
+    "Electric Iron": {"watt": 1000, "hours": 1.0},
     "Microwave Oven": {"watt": 1000, "hours": 0.5},
     "Electric Kettle": {"watt": 1500, "hours": 0.5},
 }
@@ -224,7 +224,7 @@ with tab1:
             
         with col4:
             appliance_hours = st.number_input("Hours/Day", 
-                                            value=appliance_info["hours"],
+                                            value=float(appliance_info["hours"]),  # Fixed: Convert to float
                                             min_value=0.0, 
                                             max_value=24.0, 
                                             step=0.5,
